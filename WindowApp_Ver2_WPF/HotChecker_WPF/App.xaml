@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:HotChecker_WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="tbDefaultStyle" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
     </Application.Resources>
 </Application>
