@@ -12,8 +12,11 @@
             <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="바코드리더기에 카드를 인식시켜주세요!" FontSize="30" 
+        <Viewbox>
+            <TextBlock Grid.Row="0" Text="바코드리더기에 카드를 인식시켜주세요!" FontSize="30" TextWrapping="Wrap" 
                    Style="{StaticResource tbDefaultStyle}" FontFamily="나눔고딕" FontWeight="Bold"/>
-        
+
+        </Viewbox>
+       
     </Grid>
 </UserControl>

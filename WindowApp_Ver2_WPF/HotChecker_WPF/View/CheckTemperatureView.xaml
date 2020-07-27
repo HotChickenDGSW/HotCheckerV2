@@ -11,14 +11,17 @@
             <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" FontSize="30" 
+        <Viewbox>
+            <TextBlock Grid.Row="0" FontSize="30" TextWrapping="Wrap" 
                    Style="{StaticResource tbDefaultStyle}" FontFamily="나눔고딕" FontWeight="Bold">
             <Run Text="1. 앞머리를 젖혀주세요"/>
             <LineBreak/>
             <Run Text="2. 체온계와 이마를 수평이 되도록 맞춰주세요"/>
             <LineBreak/>
             <Run Text="3. 커서가 중앙에 오도록 거리를 조절해주세요"/>
-        </TextBlock>
+            </TextBlock>
+        </Viewbox>
+
 
     </Grid>
 </UserControl>
