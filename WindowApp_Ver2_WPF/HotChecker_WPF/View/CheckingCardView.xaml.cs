@@ -28,6 +28,7 @@ namespace HotChecker_WPF.View
 
         private void CheckingCardView_Loaded(object sender, RoutedEventArgs e)
         {
+            tbBarcode.Focus();
             DataContext = App.cardViewModel; 
         }
     }

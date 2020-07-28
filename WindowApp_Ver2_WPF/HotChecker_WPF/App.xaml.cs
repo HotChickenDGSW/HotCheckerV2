@@ -15,5 +15,6 @@ namespace HotChecker_WPF
     public partial class App : Application
     {
         public static CardViewModel cardViewModel = new CardViewModel();
+        public static TemperatureViewModel temperatureViewModel = new TemperatureViewModel();
     }
 }

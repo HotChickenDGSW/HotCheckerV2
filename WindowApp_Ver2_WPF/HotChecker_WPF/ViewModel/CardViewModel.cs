@@ -16,10 +16,18 @@ namespace HotChecker_WPF.ViewModel
     public class CardViewModel : BindableBase
     {
 
-        public MemberCard memberCard
+        private MemberCard _memberCard;
+        public MemberCard MemberCard
         {
-            get;
-            set;
+            get=>_memberCard;
+            set=>SetProperty(ref _memberCard, value);
+        }
+
+        private int _count = 1;
+        public int Count
+        {
+            get => _count;
+            set => SetProperty(ref _count, value);
         }
 
         private Visibility _checkingCardViewVisiblity = Visibility.Visible;
@@ -49,6 +57,9 @@ namespace HotChecker_WPF.ViewModel
             set;
         }
 
+        public delegate void ChangeScreenEvent();
+        public event ChangeScreenEvent ChangeScreenEventHandler;
+
         public CardViewModel()
         {
             EnterCommand = new DelegateCommand(OnEnter, CanExcute);
@@ -57,9 +68,20 @@ namespace HotChecker_WPF.ViewModel
         public async void OnEnter()
         {
             await SearchMember(BarcodeData);
-            CheckingCardViewVisiblity = Visibility.Collapsed;
-            CheckedCardViewVisiblity = Visibility.Visible;
-            BarcodeData = string.Empty;
+            await Task.Run(() =>
+            {
+                CheckingCardViewVisiblity = Visibility.Collapsed;
+                CheckedCardViewVisiblity = Visibility.Visible;
+                BarcodeData = string.Empty;
+            });
+            await Task.Delay(2000);
+            ChangeScreenEventHandler?.Invoke();
+            await Task.Run(() =>
+            {
+                CheckingCardViewVisiblity = Visibility.Visible;
+                CheckedCardViewVisiblity = Visibility.Collapsed;
+            });
+
         }
 
         public bool CanExcute()
@@ -79,7 +101,8 @@ namespace HotChecker_WPF.ViewModel
                 var resp = MemberManager.FindMemberByCardId(cardId);
                 if (resp != null)
                 {
-                    memberCard = (MemberCard)resp;
+                    Count++;
+                    MemberCard = (MemberCard)resp;
                 }
             });
 

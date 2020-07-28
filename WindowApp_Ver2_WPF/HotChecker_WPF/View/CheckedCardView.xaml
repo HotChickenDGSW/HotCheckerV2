@@ -13,13 +13,13 @@
             <RowDefinition Height="0.33*"/>
         </Grid.RowDefinitions>
         <Viewbox>
-            <TextBlock Text="{Binding Name}" Style="{StaticResource tbDefaultStyle}" FontSize="30" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding MemberCard.Name}" Style="{StaticResource tbDefaultStyle}" FontSize="30" TextWrapping="Wrap" />
         </Viewbox>
         <Viewbox  Grid.Row="1">
             <TextBlock Text="{Binding Count}" Style="{StaticResource tbDefaultStyle}" FontSize="25" TextWrapping="Wrap" />
         </Viewbox>
         <Viewbox  Grid.Row="2">
-            <TextBlock Text="{Binding ClassRoomNumber}" Style="{StaticResource tbDefaultStyle}" FontSize="25" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding MemberCard.ClassRoomNumber}" Style="{StaticResource tbDefaultStyle}" FontSize="25" TextWrapping="Wrap" />
         </Viewbox>
 
     </Grid>

@@ -451,7 +451,7 @@ compile_commands.json
 *.includes
 
 # Project configuration settings like predefined Macros
-*.config
+
 
 # Qt Creator settings
 *.creator

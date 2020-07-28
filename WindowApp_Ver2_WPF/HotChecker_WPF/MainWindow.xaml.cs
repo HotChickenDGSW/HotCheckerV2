@@ -23,6 +23,25 @@ namespace HotChecker_WPF
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            App.cardViewModel.ChangeScreenEventHandler += CardViewModel_ChangeScreenEventHandler;
+            App.temperatureViewModel.ChangeScreenEventHandler += TemperatureViewModel_ChangeScreenEventHandler;
+        }
+
+        private void TemperatureViewModel_ChangeScreenEventHandler()
+        {
+            CheckCardView.Visibility = Visibility.Visible;
+            CheckTemperatureView.Visibility = Visibility.Collapsed;
+        }
+
+        private void CardViewModel_ChangeScreenEventHandler()
+        {
+            CheckCardView.Visibility = Visibility.Collapsed;
+            CheckTemperatureView.Visibility = Visibility.Visible;
         }
     }
 }
