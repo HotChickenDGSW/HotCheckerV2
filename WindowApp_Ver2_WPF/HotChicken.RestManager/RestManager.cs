@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using System.Net.Http;
 
-namespace HotChicken.RestManager
+namespace HotChicken.Rest
 {
     public class UrlSegment
     {
@@ -49,11 +49,30 @@ namespace HotChicken.RestManager
             var restClient = new RestClient(Option.NetworkOptions.serverUrl) { Timeout = Option.NetworkOptions.timeOut };
             return restClient;
         }
-        public async Task<(T respData, System.Net.HttpStatusCode respStatus)> GetResponse<T>(string resource, Method method, string parameterJson = null, QueryParam[] queryParams = null, UrlSegment[] urlSegments = null, Header[] headers = null)
+        /// <summary>
+        /// GET = 0,
+        /// POST = 1,
+        /// PUT = 2,
+        /// DELETE = 3,
+        /// HEAD = 4,
+        /// OPTIONS = 5,
+        /// PATCH = 6,
+        /// MERGE = 7,
+        /// COPY = 8
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="resource"></param>
+        /// <param name="method"></param>
+        /// <param name="parameterJson"></param>
+        /// <param name="queryParams"></param>
+        /// <param name="urlSegments"></param>
+        /// <param name="headers"></param>
+        /// <returns></returns>
+        public async Task<(T respData, System.Net.HttpStatusCode respStatus)> GetResponse<T>(string resource, int method, string parameterJson = null, QueryParam[] queryParams = null, UrlSegment[] urlSegments = null, Header[] headers = null)
         {
             T resp = default(T);
             var client = CreateClient();
-            var restRequest = CreateRequest(resource, method, parameterJson, queryParams, urlSegments, headers);
+            var restRequest = CreateRequest(resource, (Method)method, parameterJson, queryParams, urlSegments, headers);
             var response = await client.ExecuteAsync(restRequest);
             resp = JsonConvert.DeserializeObject<T>(response.Content);
 

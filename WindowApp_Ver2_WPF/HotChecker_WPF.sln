@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChecker_WPF", "HotChecke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChicken.Serial", "HotChicken.Serial\HotChicken.Serial.csproj", "{26C182B5-E835-450F-B81A-51480E88CBE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChicken.RestManager", "HotChicken.RestManager\HotChicken.RestManager.csproj", "{33BF57E2-6E01-4D81-BD36-D82C6B104C38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChicken.Rest", "HotChicken.RestManager\HotChicken.Rest.csproj", "{33BF57E2-6E01-4D81-BD36-D82C6B104C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChicken.Member", "HotChicken.Member\HotChicken.Member.csproj", "{D056DB9B-E0E0-49E0-A242-0C7AF916C613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{33BF57E2-6E01-4D81-BD36-D82C6B104C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BF57E2-6E01-4D81-BD36-D82C6B104C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BF57E2-6E01-4D81-BD36-D82C6B104C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

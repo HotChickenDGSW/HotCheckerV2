@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace HotChecker_WPF.View
 {
     /// <summary>
-    /// CheckTemperatureView.xaml에 대한 상호 작용 논리
+    /// Interaction logic for CheckTemperatureView.xaml
     /// </summary>
     public partial class CheckTemperatureView : UserControl
     {

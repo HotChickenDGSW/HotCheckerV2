@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotChicken.RestManager.Option
+namespace HotChicken.Rest.Option
 {
     public class NetworkOptions
     {

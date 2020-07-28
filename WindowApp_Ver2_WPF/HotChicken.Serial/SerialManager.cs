@@ -47,11 +47,9 @@ namespace HotChicken.Serial
             set;
         }
 
-        public SerialDataReceivedEventHandler SerialDataReceivedEventHandler
-        {
-            get;
-            set;
-        }
+
+        public delegate void DataReceivedEvent(DateTime date, string data);
+        public event DataReceivedEvent DataReceivedEventHandler;
 
         /// <summary>
         /// 시리얼통신을 위한 객체의 생성자 기본설정을 할 수 있음 
@@ -106,22 +104,19 @@ namespace HotChicken.Serial
             await Task.Run(() =>
             {
                 serialPort = new SerialPort();
+                serialPort.DataReceived += SerialPort_DataReceived;
                 serialPort.PortName = portName;
                 serialPort.BaudRate = baudRate;
                 serialPort.DataBits = dataBits;
+                serialPort.StopBits = stopBits;
                 serialPort.Parity = parity;
                 serialPort.Open();
             });
         }
 
-        public void SetDataReceivedEvent(SerialDataReceivedEventHandler method)
+        public void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            SerialDataReceivedEventHandler += method;
-        }
-
-        public void DeleteDataReceivedEvent(SerialDataReceivedEventHandler method)
-        {
-            SerialDataReceivedEventHandler -= method;
+            DataReceivedEventHandler?.Invoke(DateTime.Now, serialPort.ReadExisting());
         }
 
         public async Task SendData(string data)

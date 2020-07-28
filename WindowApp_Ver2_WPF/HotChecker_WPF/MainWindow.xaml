@@ -23,9 +23,7 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
                 <view:CheckCardView x:Name="CheckCardView"/>
-                <view:CheckedCardView x:Name="CheckedCardView" Visibility="Collapsed"/>
                 <view:CheckTemperatureView x:Name="CheckTemperatureView" Visibility="Collapsed"/>
-                <view:CheckedTemperatureView x:Name="CheckedTemperatureView" Visibility="Collapsed"/>
             </Grid>
         </Grid>
         <Grid Grid.Row="2">

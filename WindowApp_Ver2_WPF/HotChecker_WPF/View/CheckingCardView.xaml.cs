@@ -16,19 +16,19 @@ using System.Windows.Shapes;
 namespace HotChecker_WPF.View
 {
     /// <summary>
-    /// Interaction logic for CheckCardView.xaml
+    /// CheckCardView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class CheckCardView : UserControl
+    public partial class CheckingCardView : UserControl
     {
-        public CheckCardView()
+        public CheckingCardView()
         {
             InitializeComponent();
-            Loaded += CheckCardView_Loaded;
+            Loaded += CheckingCardView_Loaded;
         }
 
-        private void CheckCardView_Loaded(object sender, RoutedEventArgs e)
+        private void CheckingCardView_Loaded(object sender, RoutedEventArgs e)
         {
-            DataContext = App.cardViewModel;
+            DataContext = App.cardViewModel; 
         }
     }
 }

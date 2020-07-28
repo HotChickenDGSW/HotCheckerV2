@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="HotChecker_WPF.View.CheckingTemperatureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotChecker_WPF.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.6*"/>
+        </Grid.RowDefinitions>
+        <Viewbox>
+            <TextBlock Grid.Row="0" FontSize="30" TextWrapping="Wrap" 
+                   Style="{StaticResource tbDefaultStyle}" FontFamily="나눔고딕" FontWeight="Bold">
+            <Run Text="1. 앞머리를 젖혀주세요"/>
+            <LineBreak/>
+            <Run Text="2. 체온계와 이마를 수평이 되도록 맞춰주세요"/>
+            <LineBreak/>
+            <Run Text="3. 커서가 중앙에 오도록 거리를 조절해주세요"/>
+            </TextBlock>
+        </Viewbox>
+
+
+    </Grid>
+</UserControl>

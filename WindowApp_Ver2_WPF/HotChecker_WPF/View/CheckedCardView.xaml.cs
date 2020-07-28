@@ -23,6 +23,12 @@ namespace HotChecker_WPF.View
         public CheckedCardView()
         {
             InitializeComponent();
+            Loaded += CheckedCardView_Loaded;
+        }
+
+        private void CheckedCardView_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = App.cardViewModel;
         }
     }
 }

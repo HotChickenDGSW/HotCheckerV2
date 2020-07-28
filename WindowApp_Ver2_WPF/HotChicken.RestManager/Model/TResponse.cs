@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace HotChicken.RestManager.Model
+namespace HotChicken.Rest.Model
 {
     public class TResponse<T>
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotChecker_WPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace HotChecker_WPF
     /// </summary>
     public partial class App : Application
     {
+        public static CardViewModel cardViewModel = new CardViewModel();
     }
 }
