@@ -16,12 +16,12 @@
             <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
         <Viewbox>
-            <TextBlock Grid.Row="0" Text="바코드리더기에 카드를 인식시켜주세요!" FontSize="30" TextWrapping="Wrap" 
-                   Style="{StaticResource tbDefaultStyle}" FontFamily="나눔고딕" FontWeight="Bold"/>
+            <TextBlock Grid.Row="0" Text="{Binding CardGuideMsg}" FontSize="30" TextWrapping="Wrap" 
+                   Style="{StaticResource tbDefaultStyle}" FontWeight="Bold"/>
 
         </Viewbox>
-        <TextBox Grid.Row="1" x:Name="tbBarcode" Width="1" Height="1" Background="Green"
-                 Text="{Binding BarcodeData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                 />
+        <TextBox Grid.Row="1" x:Name="tbBarcode" Width="1" Height="1"
+                 Background="Green" IsEnabled="{Binding TextBoxIsEnable}"
+                 Text="{Binding BarcodeData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
     </Grid>
 </UserControl>

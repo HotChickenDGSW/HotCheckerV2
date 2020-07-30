@@ -8,6 +8,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="배달의민족 도현"/>
         </Style>
     </Application.Resources>
 </Application>

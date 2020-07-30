@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Viewbox>
             <TextBlock Grid.Row="0" FontSize="30" TextWrapping="Wrap" 
-                   Style="{StaticResource tbDefaultStyle}" FontFamily="나눔고딕" FontWeight="Bold">
+                   Style="{StaticResource tbDefaultStyle}" FontWeight="Bold">
             <Run Text="1. 앞머리를 젖혀주세요"/>
             <LineBreak/>
             <Run Text="2. 체온계와 이마를 수평이 되도록 맞춰주세요"/>
