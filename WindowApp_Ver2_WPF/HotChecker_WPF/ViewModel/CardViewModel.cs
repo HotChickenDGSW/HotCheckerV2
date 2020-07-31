@@ -10,6 +10,7 @@ using Prism.Mvvm;
 using System.Configuration;
 using System.Windows.Input;
 using Prism.Commands;
+using System.Windows.Media;
 
 namespace HotChecker_WPF.ViewModel
 {
@@ -77,8 +78,21 @@ namespace HotChecker_WPF.ViewModel
 
         public delegate void TextboxFocusEvent();
         public event TextboxFocusEvent TextBoxFocusEventHandler;
+
+        MediaPlayer mediaPlayerCheck = new MediaPlayer();
+        MediaPlayer mediaPlayerPlzReCheck = new MediaPlayer();
+
         public CardViewModel()
         {
+            Init();
+
+
+        }
+
+        private void Init()
+        {
+            mediaPlayerCheck.Open(new Uri("../Assets/check.mp3"));
+            mediaPlayerPlzReCheck.Open(new Uri("../Assets/plzReCheckCard.mp3"));
             EnterCommand = new DelegateCommand(OnEnter);
         }
 
@@ -87,6 +101,7 @@ namespace HotChecker_WPF.ViewModel
 
             if (await SearchMember(BarcodeData))//barcode찍었을때
             {
+                mediaPlayerCheck.Play();
                 await SerialCommunicator.serialManager.SendData("4");
                 await Task.Run(() =>//화면전환
                 {
@@ -104,6 +119,7 @@ namespace HotChecker_WPF.ViewModel
             }
             else
             {
+                mediaPlayerPlzReCheck.Play();
                 CardGuideMsg = "등록되지 않은 사용자입니다. 다시 시도해주세요!";
                 TextBoxIsEnable = false;
                 await Task.Delay(2000);//2초기다림

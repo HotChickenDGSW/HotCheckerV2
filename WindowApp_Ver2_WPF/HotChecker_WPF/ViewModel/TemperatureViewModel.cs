@@ -40,8 +40,20 @@ namespace HotChecker_WPF.ViewModel
         public delegate void ChangeScreenEvent();
         public event ChangeScreenEvent ChangeScreenEventHandler;
 
+        MediaPlayer mediaPlayertemperatureCheck = new MediaPlayer();
+        MediaPlayer mediaPlayerplzReCheckTemperature = new MediaPlayer();
+        MediaPlayer mediaPlayerOverHeat = new MediaPlayer();
         public TemperatureViewModel()
         {
+            Init();
+        }
+
+        private void Init()
+        {
+            mediaPlayertemperatureCheck.Open(new Uri("../Assets/temperatureCheck.mp3"));
+            mediaPlayerplzReCheckTemperature.Open(new Uri("../Assets/plzReCheckTemperature.mp3"));
+            mediaPlayerOverHeat.Open(new Uri("../Assets/overheat.mp3"));
+
             SerialInit();
         }
 
