@@ -47,27 +47,50 @@ namespace HotChecker_WPF.ViewModel
         private async void SerialInit()
         {
             serialManager.GetSerialPorts();
-            serialManager.DataReceivedEventHandler  += SerialManager_DataReceivedEventHandler;
+            serialManager.DataReceivedEventHandler += SerialManager_DataReceivedEventHandler;
             await serialManager.ConnectSomePort("");
         }
 
         public async void SerialManager_DataReceivedEventHandler(DateTime date, string data)
         {
-            await SetData(date, data);
-            await Task.Run(() =>
+            if(data.Contains("."))
             {
-                CheckingTemperatureViewVisiblity = Visibility.Collapsed;
-                CheckedTemperatureViewVisiblity = Visibility.Visible;
-            });
-            await Task.Delay(2000);
-            ChangeScreenEventHandler?.Invoke();
-            await Task.Run(() =>
+                await SetData(date, data);
+                await Task.Run(() =>
+                {
+                    CheckingTemperatureViewVisiblity = Visibility.Collapsed;
+                    CheckedTemperatureViewVisiblity = Visibility.Visible;
+                });
+                await Task.Delay(2000);
+                ChangeScreenEventHandler?.Invoke();
+
+                await Task.Run(() =>
+                {
+                    CheckingTemperatureViewVisiblity = Visibility.Visible;
+                    CheckedTemperatureViewVisiblity = Visibility.Collapsed;
+
+                });
+            }
+            else
             {
-                CheckingTemperatureViewVisiblity = Visibility.Visible;
-                CheckedTemperatureViewVisiblity = Visibility.Collapsed;
+                GetTemperatureInst();
+            }
+           
+        }
 
-            });
+        public async void PendingInst()
+        {
+            await serialManager.SendData("5");
+        }
 
+        public async void StopInst()
+        {
+            await serialManager.SendData("4");
+        }
+        
+        public async void GetTemperatureInst()
+        {
+            await serialManager.SendData("1");
         }
 
         private async Task SetData(DateTime date, string data)
@@ -77,7 +100,6 @@ namespace HotChecker_WPF.ViewModel
                 Temperature.Date = date;
                 Temperature.Temperture = double.Parse(data);
             });
-
         }
         //TODO : 바인딩 이름바꾸기, 시간대 설정값 모듈만들기, 서버와 이야기해서 아침점심저녁 정해진 시간대 받아오는 API 요청
     }

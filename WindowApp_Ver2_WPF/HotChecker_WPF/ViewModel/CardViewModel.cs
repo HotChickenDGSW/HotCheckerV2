@@ -62,7 +62,7 @@ namespace HotChecker_WPF.ViewModel
 
         public CardViewModel()
         {
-            EnterCommand = new DelegateCommand(OnEnter, CanExcute);
+            EnterCommand = new DelegateCommand(OnEnter);
         }
 
         public async void OnEnter()

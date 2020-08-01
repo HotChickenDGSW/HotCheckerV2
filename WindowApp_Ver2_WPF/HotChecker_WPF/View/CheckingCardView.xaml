@@ -9,7 +9,7 @@
     <UserControl.InputBindings>
         <KeyBinding Key="Enter" Command="{Binding EnterCommand}"/>
     </UserControl.InputBindings>
-
+ 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.4*"/>
