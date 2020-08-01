@@ -55,5 +55,12 @@ namespace HotChicken.Member.Model
             get;
             set;
         }
+
+        [JsonIgnore]
+        public string FullClassRoomNum
+        {
+            get => $"{Grade}학년 {Class}반 {ClassNumber}번";
+            set => FullClassRoomNum = value;
+        }
     }
 }

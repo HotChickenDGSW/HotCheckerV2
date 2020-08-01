@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using HotChecker_WPF.Model;
 using HotChicken.Serial;
 using Prism.Mvvm;
@@ -13,13 +14,13 @@ namespace HotChecker_WPF.ViewModel
 {
     public class TemperatureViewModel : BindableBase
     {
-        SerialManager serialManager = new SerialManager(9600, 8, 1, 0);
+        MediaPlayer mediaPlayer = new MediaPlayer();
 
         private Temperature _temperature = new Temperature();
         public Temperature Temperature
         {
-            get=>_temperature;
-            set=>SetProperty(ref _temperature, value);
+            get => _temperature;
+            set => SetProperty(ref _temperature, value);
         }
 
         private Visibility _checkingTemperatureViewVisiblity = Visibility.Visible;
@@ -39,31 +40,45 @@ namespace HotChecker_WPF.ViewModel
         public delegate void ChangeScreenEvent();
         public event ChangeScreenEvent ChangeScreenEventHandler;
 
+        MediaPlayer mediaPlayertemperatureCheck = new MediaPlayer();
+        MediaPlayer mediaPlayerplzReCheckTemperature = new MediaPlayer();
+        MediaPlayer mediaPlayerOverHeat = new MediaPlayer();
         public TemperatureViewModel()
         {
+            Init();
+        }
+
+        private void Init()
+        {
+            mediaPlayertemperatureCheck.Open(new Uri("../Assets/temperatureCheck.mp3"));
+            mediaPlayerplzReCheckTemperature.Open(new Uri("../Assets/plzReCheckTemperature.mp3"));
+            mediaPlayerOverHeat.Open(new Uri("../Assets/overheat.mp3"));
+
             SerialInit();
         }
 
         private async void SerialInit()
         {
-            serialManager.GetSerialPorts();
-            serialManager.DataReceivedEventHandler += SerialManager_DataReceivedEventHandler;
-            await serialManager.ConnectSomePort("");
+            SerialCommunicator.serialManager.GetSerialPorts();
+            SerialCommunicator.serialManager.DataReceivedEventHandler += SerialManager_DataReceivedEventHandler;
+            await SerialCommunicator.serialManager.ConnectSomePort("");
+            await SerialCommunicator.serialManager.SendData("5");
         }
 
         public async void SerialManager_DataReceivedEventHandler(DateTime date, string data)
         {
-            if(data.Contains("."))
+            if (data.Contains("."))
             {
+
                 await SetData(date, data);
                 await Task.Run(() =>
                 {
                     CheckingTemperatureViewVisiblity = Visibility.Collapsed;
                     CheckedTemperatureViewVisiblity = Visibility.Visible;
                 });
+                mediaPlayer.Play();
                 await Task.Delay(2000);
                 ChangeScreenEventHandler?.Invoke();
-
                 await Task.Run(() =>
                 {
                     CheckingTemperatureViewVisiblity = Visibility.Visible;
@@ -73,15 +88,9 @@ namespace HotChecker_WPF.ViewModel
             }
             else
             {
-                GetTemperatureInst();
+                await SerialCommunicator.serialManager.SendData("1");
             }
-           
-        }
 
-        public async void PendingInst()
-        {
-            await serialManager.SendData("5");
-        }
 
         public async void StopInst()
         {
@@ -92,6 +101,8 @@ namespace HotChecker_WPF.ViewModel
         {
             await serialManager.SendData("1");
         }
+
+
 
         private async Task SetData(DateTime date, string data)
         {

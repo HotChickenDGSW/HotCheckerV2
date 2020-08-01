@@ -19,7 +19,7 @@
             <TextBlock Text="{Binding Count}" Style="{StaticResource tbDefaultStyle}" FontSize="25" TextWrapping="Wrap" />
         </Viewbox>
         <Viewbox  Grid.Row="2">
-            <TextBlock Text="{Binding MemberCard.ClassRoomNumber}" Style="{StaticResource tbDefaultStyle}" FontSize="25" TextWrapping="Wrap" />
+            <TextBlock Text="{Binding MemberCard.FullClassRoomNum}" Style="{StaticResource tbDefaultStyle}" FontSize="25" TextWrapping="Wrap" />
         </Viewbox>
 
     </Grid>

@@ -13,7 +13,7 @@ namespace HotChicken.Member.Service
         const string MEMBER_URL = "/allUser";
         public async Task<(List<Model.Member> respData, HttpStatusCode respStatus)> GetMembers()
         {
-            return await restManager.GetResponse<List<Model.Member>>("/allUser", 0);
+            return await restManager.GetResponse<List<Model.Member>>(MEMBER_URL, 0);
         }
     }
 }
