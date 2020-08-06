@@ -14,8 +14,6 @@ namespace HotChecker_WPF.ViewModel
 {
     public class TemperatureViewModel : BindableBase
     {
-        MediaPlayer mediaPlayer = new MediaPlayer();
-
         private Temperature _temperature = new Temperature();
         public Temperature Temperature
         {
@@ -43,6 +41,9 @@ namespace HotChecker_WPF.ViewModel
         MediaPlayer mediaPlayertemperatureCheck = new MediaPlayer();
         MediaPlayer mediaPlayerplzReCheckTemperature = new MediaPlayer();
         MediaPlayer mediaPlayerOverHeat = new MediaPlayer();
+
+        bool isLowTemp = false;
+
         public TemperatureViewModel()
         {
             Init();
@@ -62,47 +63,71 @@ namespace HotChecker_WPF.ViewModel
             SerialCommunicator.serialManager.GetSerialPorts();
             SerialCommunicator.serialManager.DataReceivedEventHandler += SerialManager_DataReceivedEventHandler;
             await SerialCommunicator.serialManager.ConnectSomePort("");
-            await SerialCommunicator.serialManager.SendData("5");
+            PendingInst();
         }
 
         public async void SerialManager_DataReceivedEventHandler(DateTime date, string data)
         {
             if (data.Contains("."))
             {
-
                 await SetData(date, data);
+
                 await Task.Run(() =>
                 {
+                    if(Temperature.Temperture < 35)
+                    {
+                        mediaPlayerplzReCheckTemperature.Play();
+                        isLowTemp = true;
+                    }
+                    else if(Temperature.Temperture > 37.5)
+                    {
+                        mediaPlayerOverHeat.Play();
+                    }
+                    else
+                    {
+                        mediaPlayertemperatureCheck.Play();
+                    }
                     CheckingTemperatureViewVisiblity = Visibility.Collapsed;
                     CheckedTemperatureViewVisiblity = Visibility.Visible;
                 });
-                mediaPlayer.Play();
                 await Task.Delay(2000);
-                ChangeScreenEventHandler?.Invoke();
-                await Task.Run(() =>
+                if (!isLowTemp)
                 {
-                    CheckingTemperatureViewVisiblity = Visibility.Visible;
-                    CheckedTemperatureViewVisiblity = Visibility.Collapsed;
+                    ChangeScreenEventHandler?.Invoke();
+                    await Task.Run(() =>
+                    {
+                        CheckingTemperatureViewVisiblity = Visibility.Visible;
+                        CheckedTemperatureViewVisiblity = Visibility.Collapsed;
 
-                });
+                    });
+                }
+                else
+                {
+                    await Task.Run(() =>
+                    {
+                        CheckingTemperatureViewVisiblity = Visibility.Visible;
+                        CheckedTemperatureViewVisiblity = Visibility.Collapsed;
+                        PendingInst();
+                    });
+                }
+
             }
             else
             {
-                await SerialCommunicator.serialManager.SendData("1");
+                GetTemperatureInst();
             }
-
-
-        public async void StopInst()
-        {
-            await serialManager.SendData("4");
         }
-        
+
         public async void GetTemperatureInst()
         {
-            await serialManager.SendData("1");
+            await SerialCommunicator.serialManager.SendData("1");
         }
 
 
+        public async void PendingInst()
+        {
+            await SerialCommunicator.serialManager.SendData("5");
+        }
 
         private async Task SetData(DateTime date, string data)
         {
