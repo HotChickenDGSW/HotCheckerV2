@@ -85,8 +85,6 @@ namespace HotChecker_WPF.ViewModel
         public CardViewModel()
         {
             Init();
-
-
         }
 
         private void Init()
@@ -102,7 +100,7 @@ namespace HotChecker_WPF.ViewModel
             if (await SearchMember(BarcodeData))//barcode찍었을때
             {
                 mediaPlayerCheck.Play();
-                await SerialCommunicator.serialManager.SendData("4");
+                StopInst();
                 await Task.Run(() =>//화면전환
                 {
                     CheckingCardViewVisiblity = Visibility.Collapsed;
@@ -141,6 +139,10 @@ namespace HotChecker_WPF.ViewModel
         //    BarcodeData = string.Empty;
         //    return false;
         //}
+        public async void StopInst()
+        {
+            await SerialCommunicator.serialManager.SendData("4");
+        }
 
         public async Task<bool> SearchMember(string cardId)
         {
