@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="HotChecker_WPF.exe" version="1.0.0.0" publicKeyToken="1b27c6ab8fc065a6" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="HotChecker_WPF" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="HotChecker_WPF.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 매니페스트 옵션
+          Windows 사용자 계정 컨트롤 수준을 변경하려면 
+          requestedExecutionLevel 노드를 다음 중 하나로 바꾸세요.
+
+          <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+          <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+          <requestedExecutionLevel level="highestAvailable" uiAccess="false" />
+
+          이전 버전과의 호환성을 위해 파일 및 레지스트리 가상화를 사용하려면 
+          requestedExecutionLevel 노드를 삭제하세요.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CommonServiceLocator.dll" size="9216">
+      <assemblyIdentity name="CommonServiceLocator" version="2.0.5.0" publicKeyToken="489B6ACCFAF20EF0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MvZwHGQxcknfjpXf3/A3ifLCv0EkuHaVWP8mJMVqUEs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HotChecker_WPF.exe" size="41944">
+      <assemblyIdentity name="HotChecker_WPF" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>P5iDtX3KqQIQUkQknViVTLBQtXt9eOer7zgGrD9yBJo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HotChicken.Member.dll" size="10240">
+      <assemblyIdentity name="HotChicken.Member" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>BDZ/7qfsCQxq2W1JgNFvkgFSkHbmeP6JwkKXoITyqA0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HotChicken.RestManager.dll" size="10240">
+      <assemblyIdentity name="HotChicken.RestManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>LLkW+/y7k0QzfhZTRDqBE9i01PS6YMAmbnkeQ4bZ9nE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HotChicken.Serial.dll" size="10240">
+      <assemblyIdentity name="HotChicken.Serial" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>PhlmNmVfMMDO8BJJWL58zKUzDkujUsJ1bBkUbVqWAmU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="700336">
+      <assemblyIdentity name="Newtonsoft.Json" version="12.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>f5ErKKB8Im4L46z7L1fwUFOKugEA+h8L8sOfGh8dqBQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Prism.dll" size="76712">
+      <assemblyIdentity name="Prism" version="7.2.0.1422" publicKeyToken="40EE6C3A2184DC59" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jGNdafix6b6mlA0PH99aZgS+hTIBjZcSzeDfE4nSOow=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Prism.Wpf.dll" size="147368">
+      <assemblyIdentity name="Prism.Wpf" version="7.2.0.1422" publicKeyToken="40EE6C3A2184DC59" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>OYSaWtlsL1JMZT5COkZqrBQS1GLxinxSZJVrI8f1fQE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RestSharp.dll" size="190464">
+      <assemblyIdentity name="RestSharp" version="106.11.4.0" publicKeyToken="598062E77F915F75" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ZU5yRardZb4kbv6MqPmoWYaSLrG6usEKDapyYdYKYDs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.ValueTuple.dll" size="25232">
+      <assemblyIdentity name="System.ValueTuple" version="4.0.3.0" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6QXRAlhbIsbfBPIZr1y9v6e8Fll56XiLYt9tzBZeEPQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Windows.Interactivity.dll" size="55904">
+      <assemblyIdentity name="System.Windows.Interactivity" version="4.5.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>k/vFnkiAr8nxNsOsCXatp/P6p8rO3OXIJLM3y8qdLr8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="HotChecker_WPF.exe.config" size="528">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PTVCM86C1z2HG6XMRYD2GptyKE4kX4BnbfPsb4WnTFE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-PBANHN6\kteo" issuerKeyHash="a8dc47f10e196ccbe77697e39905007b967cbcf1" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Yx+wceNdg+rBOTQP1y0bCfQwUNd3DXl0HmKu+HskZoQ=</DigestValue></Reference></SignedInfo><SignatureValue>mDFHmA4f4yacwwIGY6Y5hLuTBPEToMWYo/sZiSTc9w9zJL83zEpcmZkEas2K/lg/p2SObMsMqaW3EJh4F4AxlCgNIWToAxYBO4cz3dYm3jW1kQdtWJ3vH5zqAKmvEeGG0PaTGylXZt5bEzVua+ifnvAoJwP6srFkOfCoJNXYIac=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>zDZrMV2J9vXoL1T5gooS4C658co5u5Rqo5vfJKk+ERwZJjHazEtfHks4w8FFsIs49mxZUQARuzGZhh7eYGIVwn2D3JlHwubc3oqIlsNHr/QArfC1IaTkewrFxLaz76iId3dUPqzV3eJEObtEe5qXFFqsy9n7fgxuiDbdVPI3zT0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="8466247bf8ae621e74790d77d75030f4091b2dd70f3439c1ea835de371b01f63" Description="" Url=""><as:assemblyIdentity name="HotChecker_WPF.exe" version="1.0.0.0" publicKeyToken="1b27c6ab8fc065a6" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-PBANHN6\kteo</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>3QZ/FFncSJd5iqnxPMKdFXLwNK8KdiT+lwU6DbD3E9I=</DigestValue></Reference></SignedInfo><SignatureValue>R5vXCQp7fSp5go6GktI93W4msoYx0i4o4LOApfN8kp0kaccSe0KP8n8WybB3du9tSKXQtxrn/JnEBeBF4lP/3aB2X9G28IRlfCSQ7xy4rGPwVfRepFSDS0BTzJ0sz1UWi/KxX5J1sg2RrB6gZxiH6dbHh0KvHmKuiedK59EIY6o=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>zDZrMV2J9vXoL1T5gooS4C658co5u5Rqo5vfJKk+ERwZJjHazEtfHks4w8FFsIs49mxZUQARuzGZhh7eYGIVwn2D3JlHwubc3oqIlsNHr/QArfC1IaTkewrFxLaz76iId3dUPqzV3eJEObtEe5qXFFqsy9n7fgxuiDbdVPI3zT0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQFYIiII8bHLJEUJffQChFLTANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtAFAAQgBBAE4ASABOADYAXABrAHQAZQBvMB4XDTIwMDgwOTAyNDkzNFoXDTIxMDgwOTA4NDkzNFowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQBQAEIAQQBOAEgATgA2AFwAawB0AGUAbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAzDZrMV2J9vXoL1T5gooS4C658co5u5Rqo5vfJKk+ERwZJjHazEtfHks4w8FFsIs49mxZUQARuzGZhh7eYGIVwn2D3JlHwubc3oqIlsNHr/QArfC1IaTkewrFxLaz76iId3dUPqzV3eJEObtEe5qXFFqsy9n7fgxuiDbdVPI3zT0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQBSdJC17DaYSR3KKWnYf5kMozA/V9WLJ5N3JV6301lgkQw1LckRXoJWYbJTTN6cNcj9sM0sLujUcVEMkfWxmk605B0N98LcI08g8HpbW/HY07apDpn+xZ+fHolQ8PfxQIlfkBxoVHx9D6DkFGGqt1GPCm2mYz8cLfLtFIvr/m5ZrA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

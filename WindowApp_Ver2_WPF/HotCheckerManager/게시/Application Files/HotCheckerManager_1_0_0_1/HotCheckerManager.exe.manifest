@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="HotCheckerManager.exe" version="1.0.0.1" publicKeyToken="7d5fb9868a901b80" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="HotCheckerManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="HotCheckerManager.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 매니페스트 옵션
+          Windows 사용자 계정 컨트롤 수준을 변경하려면 
+          requestedExecutionLevel 노드를 다음 중 하나로 바꾸세요.
+
+          <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+          <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+          <requestedExecutionLevel level="highestAvailable" uiAccess="false" />
+
+          이전 버전과의 호환성을 위해 파일 및 레지스트리 가상화를 사용하려면 
+          requestedExecutionLevel 노드를 삭제하세요.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HotCheckerManager.exe" size="5080">
+      <assemblyIdentity name="HotCheckerManager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>gHcq8U8/z51UcFTMhTO+4xNMr9Wzg9tXNkS4yrHNIok=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="HotCheckerManager.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-PBANHN6\kteo" issuerKeyHash="0c1201c2fecf83e208849a7a0af7d54b6a1e06b8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>4KRUegJ8DdH9qrWl8khPi13SE/6VoADfWelsdvZFZiI=</DigestValue></Reference></SignedInfo><SignatureValue>pqb5v+34IYrEor0+Qt2xQKJ7vNE//vC+V/3CqLf1N6sqP9oBtP4tP7aWY8+Aup5r1if4s7dS6sZlt0bj5I5mW/wXk7Sc+++7dOMSYkAf5Q+jbCAimVInsQW5skMgd5QJ7W3W+8DewsU7+9ue5DVaeTeR2VSBm9f9ePCHNIwgU0M=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>vR9V3dbrc7FTbZdjJYvGckhKvbJioQMZ6obY6Zm5t4jP7xVWf8t5RUhYyxREIQTfmqrQHwMRwjCbE82g2WCthJE4pQ2u/UXC7uC7w6dEJIr2RCBW2Vci8CeeQDLgAFNHTZc7arxy61YOY6QiJ9EZuXmdTzxOK0J3oPziccAbzd0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="226645f6766ce959df00a095fe13d25d8b4f48f2a5b5aafdd10d7c027a54a4e0" Description="" Url=""><as:assemblyIdentity name="HotCheckerManager.exe" version="1.0.0.1" publicKeyToken="7d5fb9868a901b80" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-PBANHN6\kteo</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>JIkVvAykt0uvJI6gsH9deL3BaEFYbWz46Lm3njVc0sw=</DigestValue></Reference></SignedInfo><SignatureValue>D7rEGmJ+WS7X3G4VNCMdCGI0aF4tFrdbamWkOMbC3rsZq0u3QAR/1JuPAbSzMH7j2BnZdLSLPh9dWg6BrSlkATQzxd9E0SiUTubhcYU7WILMM0hL1mfdlUrcUKUKsMMSFbJKlZNSbwYkZkG4gnEz1l44/b0W3XOc9QnOSBZpipw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>vR9V3dbrc7FTbZdjJYvGckhKvbJioQMZ6obY6Zm5t4jP7xVWf8t5RUhYyxREIQTfmqrQHwMRwjCbE82g2WCthJE4pQ2u/UXC7uC7w6dEJIr2RCBW2Vci8CeeQDLgAFNHTZc7arxy61YOY6QiJ9EZuXmdTzxOK0J3oPziccAbzd0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQaj/83WJoyr9DmLQJMr0NHTANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtAFAAQgBBAE4ASABOADYAXABrAHQAZQBvMB4XDTIwMDgwOTAyNDQyM1oXDTIxMDgwOTA4NDQyM1owMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQBQAEIAQQBOAEgATgA2AFwAawB0AGUAbzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAvR9V3dbrc7FTbZdjJYvGckhKvbJioQMZ6obY6Zm5t4jP7xVWf8t5RUhYyxREIQTfmqrQHwMRwjCbE82g2WCthJE4pQ2u/UXC7uC7w6dEJIr2RCBW2Vci8CeeQDLgAFNHTZc7arxy61YOY6QiJ9EZuXmdTzxOK0J3oPziccAbzd0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQC2kq3PrUN8xM8ozanI/Hq+8thndAhF/j/fHhpqCmpzPMabdk4+KJIKN+61SRmWwp8iH4CVbz4ZBG1Eyyn9FOwcLllJPxCgwD2SbMXkKZodGo5GZhI2yzs8GNy32CYm3so9wqfStIfv/zVZFLy59rhkNw6lv1RzurrAkSdNTu+IcA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

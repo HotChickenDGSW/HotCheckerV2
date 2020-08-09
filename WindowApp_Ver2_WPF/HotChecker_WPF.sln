@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChicken.Rest", "HotChick
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChicken.Member", "HotChicken.Member\HotChicken.Member.csproj", "{D056DB9B-E0E0-49E0-A242-0C7AF916C613}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotCheckerManager", "HotCheckerManager\HotCheckerManager.csproj", "{883F1C40-A42E-4DD8-943A-D36AF01CB46D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D056DB9B-E0E0-49E0-A242-0C7AF916C613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883F1C40-A42E-4DD8-943A-D36AF01CB46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883F1C40-A42E-4DD8-943A-D36AF01CB46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883F1C40-A42E-4DD8-943A-D36AF01CB46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883F1C40-A42E-4DD8-943A-D36AF01CB46D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
