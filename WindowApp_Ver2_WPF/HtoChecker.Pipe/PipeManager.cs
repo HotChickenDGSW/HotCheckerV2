@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotChecker_WPF.Service
+namespace HtoChecker.Pipe
 {
-    public class PipeService
+    public class PipeManager
     {
         public void PipeInit()
         {

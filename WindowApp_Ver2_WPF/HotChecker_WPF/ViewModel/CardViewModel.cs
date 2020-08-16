@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Windows.Input;
 using Prism.Commands;
 using System.Windows.Media;
+using HotChecker_WPF.Common;
 
 namespace HotChecker_WPF.ViewModel
 {
@@ -89,8 +90,8 @@ namespace HotChecker_WPF.ViewModel
 
         private void Init()
         {
-            mediaPlayerCheck.Open(new Uri("../Assets/check.mp3"));
-            mediaPlayerPlzReCheck.Open(new Uri("../Assets/plzReCheckCard.mp3"));
+            mediaPlayerCheck.Open(new Uri(DirectoryCommon.voiceBaseDirectory+ "check.mp3"));
+            mediaPlayerPlzReCheck.Open(new Uri(DirectoryCommon.voiceBaseDirectory+ "plzReCheckCard.mp3"));
             EnterCommand = new DelegateCommand(OnEnter);
         }
 

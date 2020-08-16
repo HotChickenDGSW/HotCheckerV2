@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using HotChecker_WPF.Common;
 using HotChecker_WPF.Model;
 using HotChicken.Serial;
 using Prism.Mvvm;
@@ -51,9 +52,9 @@ namespace HotChecker_WPF.ViewModel
 
         private void Init()
         {
-            mediaPlayertemperatureCheck.Open(new Uri("../Assets/temperatureCheck.mp3"));
-            mediaPlayerplzReCheckTemperature.Open(new Uri("../Assets/plzReCheckTemperature.mp3"));
-            mediaPlayerOverHeat.Open(new Uri("../Assets/overheat.mp3"));
+            mediaPlayertemperatureCheck.Open(new Uri(DirectoryCommon.voiceBaseDirectory+ "temperatureCheck.mp3"));
+            mediaPlayerplzReCheckTemperature.Open(new Uri(DirectoryCommon.voiceBaseDirectory + "plzReCheckTemperature.mp3"));
+            mediaPlayerOverHeat.Open(new Uri(DirectoryCommon.voiceBaseDirectory + "overheat.mp3"));
 
             SerialInit();
         }

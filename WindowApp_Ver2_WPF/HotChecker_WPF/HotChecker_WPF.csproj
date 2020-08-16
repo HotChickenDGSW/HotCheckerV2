@@ -103,9 +103,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\DirectoryCommon.cs" />
     <Compile Include="Model\MemberCard.cs" />
     <Compile Include="Model\Temperature.cs" />
-    <Compile Include="Service\PipeService.cs" />
     <Compile Include="Service\TemperatureService.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\SerialCommunicator.cs" />
